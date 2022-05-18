@@ -21,6 +21,8 @@ fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 #display the table on the page
+streamlit.dataframe(fruits_to_show)
+
 
 
 #create the repeatable code block
@@ -30,7 +32,7 @@ def get_fruityvice_data(this_fruit_choice):
     return fruityvice_normalized
   
   #new section to display
-  streamlit.header('Fruityvice Fruit Advice!')
+streamlit.header('Fruityvice Fruit Advice!')
 try:
   fruit_choice = streamlit.text_input('what fruit would you like information about?')
   if not fruit_choice:
